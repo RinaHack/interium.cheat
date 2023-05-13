@@ -1,16 +1,3 @@
-// ==UserScript==
-// @name         Интериум
-// @namespace    http://tampermonkey.net/
-// @version      0.2
-// @description  true?false
-// @author       Rina
-// @match        *://doomed2.io/*
-// @run-at       document-start
-// @icon		 https://playerok.com/imgproxy/7XsZQaiFkkrp5QutoXEgGBuzm6j003kwWcVmydNT0B8/wm:0.8:soea:5:2:0.2/rs:fill:0:1000:0/g:no/quality:99/czM6Ly9wbGF5ZXJvay8vaW1hZ2VzLzFlZGRlMmIwLTgzOGUtNjVlMC00ZjhhLWE1OGMwNzY5YTc3YS5qcGc.jpg
-// @grant        none
-// @require      https://raw.githubusercontent.com/Askile/GUI/main/Beta
-// @require      https://unpkg.com/msgpack-lite@0.1.17/dist/msgpack.min.js
-// ==/UserScript==
 
 // Центр управления & true ? false ** Все стоит по умолчанию (желательно)
 let hackmenu = document.createElement("div");
