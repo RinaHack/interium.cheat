@@ -1,5 +1,3 @@
-
-// Центр управления & true ? false ** Все стоит по умолчанию (желательно)
 let hackmenu = document.createElement("div");
 let slotCount = 28;
 let injected = false;
@@ -24,39 +22,6 @@ let currentSlot;
 let inventoryItems;
 inventorySlotShield--;
 window.logging = false;
-
-(()=>{var t={108:(t,e,i)=>{var o,s;o=[i,e,i(354),i(360),i(357),i(638),i(493),i(528),i(948),i(259),i(462),i(598),i(550),i(739),i(813)],s=function(t,e,i,o,s,r,n,l,a,h,c,d,u,p,g){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.gui=void 0,e.gui=new class{constructor(){this.bind="Backquote",this.cursorState=0,this.tree=[],this.isActivated=!1,this.selectedSlot=-1,this.position=new c.Vector,this.config=d.Config,this.patterns=d.patterns,this.render=new i.Render,this.eventController=new o.EventController,this.audioManager=new u.AudioManager(1),this.storage=new g.Storage,this.addFont("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"),this.addFont("https://fonts.googleapis.com/css2?family=Orbitron&display=swap"),this.addFont("https://fonts.cdnfonts.com/css/baloo-paaji"),this.init()}init(){this.eventController.listen(),this.draw(),window.addEventListener("click",(t=>{for(const i of Object.values(this.tree)){const{position:o,size:s,slot:r}=i;l.MathHelper.isHover(o,t,s)&&e.gui.isActivated&&(e.gui.selectedSlot=r)}}))}addFont(t){document.body.insertAdjacentHTML("beforebegin",`<style> @import url(${t}); </style>`)}observe(t){return new Proxy(t,{get:(t,e)=>t[e]})}switch(){this.isActivated=!this.isActivated,this.render.changeVisibility()}draw(){window.requestAnimationFrame(this.draw.bind(this));const{context:t}=this.render,e=window.innerWidth/2-500,i=window.innerHeight/2-300;if(this.position.x=l.MathHelper.lerp(this.position.x,e,.2),this.position.y=l.MathHelper.lerp(this.position.y,i,.2),t.clearRect(0,0,window.innerWidth,window.innerHeight),this.isActivated){this.drawMenu(),this.drawTopMenu(),this.drawFoldersMenu(),this.drawCross(),this.handleCursor();for(let t=0;t<Object.values(this.tree).length;t++)Object.values(this.tree)[t].render();this.selectedSlot>=0&&(t.save(),t.fillStyle=this.config.folder.hoverColor,t.beginPath(),t.roundRect(this.position.x,50*this.selectedSlot+this.position.y,10,Object.values(this.tree)[this.selectedSlot].size.y,[this.selectedSlot?0:12,0,0,11===this.selectedSlot?12:0]),t.fill(),t.globalAlpha=.115,t.fillRect(this.position.x+10,50*this.selectedSlot+this.position.y,Object.values(this.tree)[this.selectedSlot].size.x-10,Object.values(this.tree)[this.selectedSlot].size.y),t.restore())}this.eventController.leftClick=!1}handleCursor(){window.document.querySelector("html").style.cursor=1==this.cursorState?"pointer":2==this.cursorState?"e-resize":"auto",this.cursorState=0}drawTopMenu(){const{context:t}=this.render;t.save(),t.beginPath(),t.shadowBlur=5,t.shadowColor="black",t.fillStyle=this.config.menu.backgroundColor,t.roundRect(this.position.x+175,this.position.y,825,40,[0,12,0,0]),t.fill(),t.restore()}drawMenu(){const{context:t}=this.render;t.save(),t.beginPath(),t.shadowBlur=5,t.shadowColor="black",t.fillStyle=this.config.menu.backgroundColor,t.roundRect(this.position.x+175,this.position.y+40,825,560,[0,0,12,0]),t.fill(),t.restore()}drawCross(){const{context:t}=this.render,e=new c.Vector({x:this.position.x+950,y:this.position.y}),i=new c.Vector({x:50,y:40}),o=l.MathHelper.isHover(e,this.eventController.mouse,i),s=this.eventController.leftClick;o&&s&&this.switch(),o&&(t.save(),t.beginPath(),t.fillStyle="white",t.globalAlpha=.1,t.roundRect(e.x,e.y,i.x,i.y,[0,12,0,0]),t.fill(),t.restore()),this.render.createText({text:"x",x:e.x+i.x/2,y:e.y+i.y/2,color:"red",fontSize:50})}drawFoldersMenu(){const{context:t}=this.render;t.save(),t.beginPath(),t.shadowBlur=5,t.shadowColor="black",t.fillStyle=this.config.folder.backgroundColor,t.roundRect(this.position.x,this.position.y,175,600,[12,0,0,12]),t.fill(),t.restore()}createElements(t){for(let e=0;e<t.length;e++){const{type:i,label:o,description:l,parent:c,object:d,property:u,action:g,start:v,end:y,step:b,save:f}=t[e];switch(i){case h.EXTENSIONS.FOLDER:this.tree[o]=new r.Folder({label:o});break;case h.EXTENSIONS.BUTTON:this.tree[c].tree[o]=new s.Button({label:o,description:l,action:g});break;case h.EXTENSIONS.SWITCH:this.tree[c].tree[o]=new n.Switch({label:o,object:d,property:u,save:f});break;case h.EXTENSIONS.SLIDER:this.tree[c].tree[o]=new a.Slider({label:o,object:d,property:u,start:v,end:y,step:b});break;case h.EXTENSIONS.BIND:this.tree[c].tree[o]=new p.Bind({label:o,object:d,property:u})}console.log(this.tree)}}},window.gui=e.gui}.apply(e,o),void 0===s||(t.exports=s)},598:(t,e,i)=>{var o;o=function(t,e){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.patterns=e.Config=void 0,e.Config={folder:{backgroundColor:"#2E2E2E",textColor:"#FFFFFF",hoverColor:"#424242"},button:{backgroundColor:"#424242",textColor:"#FFFFFF",hoverColor:"#2E2E2E"},switch:{backgroundColor:"#424242",hoverColor:"#000000",thumbColor:"#FFFFFF"},slider:{backgroundColor:"#424242",hoverColor:"#000000",thumbColor:"#FFFFFF"},menu:{backgroundColor:"#1C1C1C"},font:{size:20,family:"Baloo Paaji, sans-serif"},descriptionColor:"#FFFFFF"},e.patterns={dark_crimson:{folder:{backgroundColor:"#212121",textColor:"#f5f5f5",hoverColor:"#424242"},button:{backgroundColor:"#424242",textColor:"#f5f5f5",hoverColor:"#616161"},switch:{backgroundColor:"#424242",hoverColor:"#616161",thumbColor:"#f44336"},slider:{backgroundColor:"#424242",hoverColor:"#616161",thumbColor:"#f44336"},menu:{backgroundColor:"#303030"},font:{size:24,family:"Source Sans Pro"},descriptionColor:"#9e9e9e"},dark_ocean:{folder:{backgroundColor:"#1e1f26",textColor:"#00bcd4",hoverColor:"#2b2d3c"},button:{backgroundColor:"#2b2d3c",textColor:"#00bcd4",hoverColor:"#3d4154"},switch:{backgroundColor:"#2b2d3c",hoverColor:"#3d4154",thumbColor:"#00bcd4"},slider:{backgroundColor:"#2b2d3c",hoverColor:"#3d4154",thumbColor:"#00bcd4"},menu:{backgroundColor:"#1e1f26"},font:{size:24,family:"Source Sans Pro"},descriptionColor:"#a5a5a5"},lava:{folder:{backgroundColor:"#9b0000",textColor:"white",hoverColor:"#ff4444"},button:{backgroundColor:"#9b0000",textColor:"white",hoverColor:"#ff4444"},switch:{backgroundColor:"#4d0000",hoverColor:"#ff4444",thumbColor:"white"},slider:{backgroundColor:"#4d0000",hoverColor:"#ff4444",thumbColor:"white"},menu:{backgroundColor:"#330000"},font:{size:24,family:"Source Sans Pro"},descriptionColor:"#999999"},sun:{lerp_factor:.5,folder:{backgroundColor:"#F9C784",textColor:"#5A5A5A",hoverColor:"#FFE6B3"},button:{backgroundColor:"#FFA300",textColor:"#FFFFFF",hoverColor:"#FFC04D"},switch:{backgroundColor:"#F9C784",hoverColor:"#FFE6B3",thumbColor:"#FFA300"},slider:{backgroundColor:"#F9C784",hoverColor:"#FFE6B3",thumbColor:"#FFA300"},menu:{backgroundColor:"#F9C784"},font:{size:22,family:"Baloo Paaji"},descriptionColor:"#5A5A5A"}}}.apply(e,[i,e]),void 0===o||(t.exports=o)},739:(t,e,i)=>{var o,s;o=[i,e,i(108),i(462),i(528)],s=function(t,e,i,o,s){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.Bind=void 0,e.Bind=class{constructor(t){this.position=new o.Vector,this.size=new o.Vector({x:120,y:40});const{label:e,object:s,property:r}=t;this.label=e,this.object=i.gui.observe(s),this.property=r,i.gui.storage.addOption({label:e,object:s,property:r})}get isHover(){return s.MathHelper.isHover(this.position,i.gui.eventController.mouse,this.size)&&i.gui.isActivated}get isClick(){return this.isHover&&i.gui.eventController.leftClick}get isDragging(){return i.gui.eventController.isDrag&&this.isHover}render(t){this.updatePosition(t),this.drawButtonShadow(),!this.isDragging&&this.drawButton(),this.drawDescription(),this.drawLabel(),this.isClick&&this.onClick(),this.isHover&&this.onHover()}onClick(){const t=this.object,e=this.property;t[e]="Press any key",document.addEventListener("keydown",(function i(o){t[e]=o.code,document.removeEventListener("keydown",i)})),i.gui.audioManager.playAudio("https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-77317/zapsplat_multimedia_button_click_fast_short_004_79288.mp3")}updatePosition(t){this.position=new o.Vector({x:i.gui.position.x+t.x+420,y:i.gui.position.y+t.y+63})}drawLabel(){i.gui.render.createText({text:this.label,x:this.position.x-this.size.x-100,y:this.position.y+this.size.y/2,color:i.gui.config.descriptionColor,maxWidth:200,fontSize:20,align:"left"})}drawButton(){const{context:t}=i.gui.render;t.save(),t.beginPath(),t.fillStyle=i.gui.config.button.backgroundColor,t.roundRect(this.position.x,this.position.y,this.size.x,this.size.y,8),t.fill(),t.restore()}drawButtonShadow(){const{context:t}=i.gui.render,{getShadowHex:e}=s.MathHelper;t.save(),t.beginPath(),t.fillStyle=this.isDragging?i.gui.config.button.backgroundColor:e(i.gui.config.button.backgroundColor),t.roundRect(this.position.x,this.position.y+8,this.size.x,this.size.y,8),t.fill(),t.restore()}onHover(){const{context:t}=i.gui.render;i.gui.cursorState=1,t.save(),t.beginPath(),t.fillStyle=i.gui.config.button.hoverColor,t.globalAlpha=.2,t.roundRect(this.position.x,this.position.y+(this.isDragging?8:0),this.size.x,this.size.y,8),t.fill(),t.restore()}drawDescription(){i.gui.render.createText({text:this.object[this.property],x:this.position.x+this.size.x/2,y:this.position.y+this.size.y/2+(this.isDragging?8:0),color:i.gui.config.button.textColor,maxWidth:this.size.x,fontSize:16,align:"center"})}}}.apply(e,o),void 0===s||(t.exports=s)},357:(t,e,i)=>{var o,s;o=[i,e,i(528),i(108),i(462)],s=function(t,e,i,o,s){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.Button=void 0,e.Button=class{constructor(t){this.position=new s.Vector,this.size=new s.Vector({x:120,y:40}),this.label=t.label,this.description=t.description,this.action=t.action??(()=>{})}get isHover(){return i.MathHelper.isHover(this.position,o.gui.eventController.mouse,this.size)&&o.gui.isActivated}get isClick(){return this.isHover&&o.gui.eventController.leftClick}get isDragging(){return o.gui.eventController.isDrag&&this.isHover}render(t){this.updatePosition(t),this.drawButtonShadow(),!this.isDragging&&this.drawButton(),this.drawDescription(),this.drawLabel(),this.isClick&&this.onClick(),this.isHover&&this.onHover()}updatePosition(t){this.position=new s.Vector({x:o.gui.position.x+t.x+420,y:o.gui.position.y+t.y+63})}onClick(){o.gui.audioManager.playAudio("https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-77317/zapsplat_multimedia_button_click_fast_short_004_79288.mp3")}drawButton(){const{context:t}=o.gui.render;t.save(),t.beginPath(),t.fillStyle=o.gui.config.button.backgroundColor,t.roundRect(this.position.x,this.position.y,this.size.x,this.size.y,8),t.fill(),t.restore()}drawButtonShadow(){const{context:t}=o.gui.render,{getShadowHex:e}=i.MathHelper;t.save(),t.beginPath(),t.fillStyle=this.isDragging?o.gui.config.button.backgroundColor:e(o.gui.config.button.backgroundColor),t.roundRect(this.position.x,this.position.y+8,this.size.x,this.size.y,8),t.fill(),t.restore()}onHover(){const{context:t}=o.gui.render;o.gui.cursorState=1,t.save(),t.beginPath(),t.fillStyle=o.gui.config.button.hoverColor,t.globalAlpha=.2,t.roundRect(this.position.x,this.position.y+(this.isDragging?8:0),this.size.x,this.size.y,12),t.fill(),t.restore()}drawDescription(){o.gui.render.createText({text:this.description,x:this.position.x-this.size.x-100,y:this.position.y+this.size.y/2,color:o.gui.config.descriptionColor,maxWidth:200,align:"left"})}drawLabel(){o.gui.render.createText({text:this.label,x:this.position.x+this.size.x/2,y:this.position.y+this.size.y/2+(this.isDragging?8:0),color:o.gui.config.button.textColor,maxWidth:this.size.x,fontSize:16})}}}.apply(e,o),void 0===s||(t.exports=s)},638:(t,e,i)=>{var o,s;o=[i,e,i(528),i(108),i(462)],s=function(t,e,i,o,s){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.Folder=void 0;let r=0;e.Folder=class{constructor({label:t}){this.tree=[],this.position=new s.Vector,this.size=new s.Vector({x:175,y:50}),this.slot=r++,this.label=t}render(){const t=i.MathHelper.isHover(this.position,o.gui.eventController.mouse,this.size)&&o.gui.isActivated;this.updatePosition(),t&&this.onHover(),this.drawLabel();for(let t=0;t<Object.values(this.tree).length;t++)o.gui.selectedSlot===this.slot&&Object.values(this.tree)[t].render({x:400*Math.floor(t/10),y:55*t-550*Math.floor(t/10)})}updatePosition(){this.position=new s.Vector({x:o.gui.position.x,y:50*this.slot+o.gui.position.y})}onHover(){const{context:t}=o.gui.render;o.gui.cursorState=1,t.save(),t.beginPath(),t.fillStyle=o.gui.config.folder.hoverColor,t.globalAlpha=.2275,t.roundRect(this.position.x,this.position.y,this.size.x,this.size.y,[this.slot?0:12,0,0,11===this.slot?12:0]),t.fill(),t.restore()}drawLabel(){o.gui.render.createText({text:this.label,x:this.position.x+this.size.x/2,y:this.position.y+this.size.y/2,color:o.gui.config.folder.textColor,maxLength:16})}}}.apply(e,o),void 0===s||(t.exports=s)},948:(t,e,i)=>{var o,s;o=[i,e,i(528),i(108),i(462)],s=function(t,e,i,o,s){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.Slider=void 0,e.Slider=class{constructor(t){this.isDragging=!1,this.thumbOffset=0,this.newThumbOffset=0,this.position=new s.Vector,this.size=new s.Vector({x:120,y:30}),this.label=t.label,this.defaultLabel=t.label,this.property=t.property,this.object=t.object,this.start=t.start,this.end=t.end,this.step=t.step,this.data=o.gui.observe(this.object)}get isHover(){return i.MathHelper.isHover(this.position,o.gui.eventController.mouse,this.size)&&o.gui.isActivated}get isClick(){return this.isHover&&o.gui.eventController.leftClick}render(t){this.updatePosition(t),this.thumbOffset=i.MathHelper.lerp(this.thumbOffset,this.newThumbOffset,.2);const e=i.MathHelper.isHover(this.position,o.gui.eventController.mouse,this.size),s=o.gui.eventController.isDrag;if(this.isClick?this.isDragging=!0:s||(this.isDragging=!1),this.drawThumbTail(),this.drawSliderBackground(),this.drawSliderThumb(),e&&o.gui.isActivated&&(o.gui.cursorState=2),o.gui.eventController.isDrag&&this.isDragging){const t=this.size.x-this.size.y,e=this.step/100,i=o.gui.eventController.mouse.x-this.position.x-this.size.y/2,s=Math.max(0,Math.min(i,t)),r=Math.round(s/this.step)*this.step,n=Math.max(this.start,Math.min(this.end*(r/t),this.end)),l=Math.round(n/e)*e,a=l%1==0?l:l.toFixed(2);this.newThumbOffset=r,this.object[this.property]=l,this.label=`${this.defaultLabel} (${a})`}this.drawDescription()}updatePosition(t){this.position=new s.Vector({x:o.gui.position.x+t.x+420,y:o.gui.position.y+t.y+70})}drawSliderThumb(){const{context:t}=o.gui.render;t.save(),t.beginPath(),t.strokeStyle="black",t.lineWidth=3,t.fillStyle=o.gui.config.slider.thumbColor,t.arc(this.position.x+this.thumbOffset+this.size.y/2,this.position.y+this.size.y/2,this.size.y/2+2,0,2*Math.PI),t.fill(),t.stroke(),t.restore()}drawSliderBackground(){const{context:t}=o.gui.render;t.save(),t.beginPath(),t.globalAlpha=.4,t.fillStyle=o.gui.config.slider.backgroundColor,t.roundRect(this.position.x,this.position.y,this.size.x,this.size.y,12),t.fill(),t.restore()}drawThumbTail(){const{context:t}=o.gui.render;t.save(),t.beginPath(),t.fillStyle=o.gui.config.slider.backgroundColor,t.roundRect(this.position.x,this.position.y,this.thumbOffset+this.size.y,this.size.y,12),t.fill(),t.restore()}drawDescription(){o.gui.render.createText({text:this.label,x:this.position.x-this.size.x-100,y:this.position.y+this.size.y/2,color:o.gui.config.descriptionColor,maxWidth:200,fontSize:20,align:"left"})}}}.apply(e,o),void 0===s||(t.exports=s)},493:(t,e,i)=>{var o,s;o=[i,e,i(528),i(108),i(462)],s=function(t,e,i,o,s){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.Switch=void 0,e.Switch=class{constructor({label:t,object:e,property:i,save:r}){this.position=new s.Vector,this.size=new s.Vector({x:120,y:40}),this.squareOffset=0,this.label=t,this.property=i,this.save=r??!0,this.activated=o.gui.observe(e),this.save&&o.gui.storage.addOption({label:this.label,object:e,property:i})}get isHover(){return i.MathHelper.isHover(this.position,o.gui.eventController.mouse,this.size)&&o.gui.isActivated}get isClick(){return this.isHover&&o.gui.eventController.leftClick}get isActivated(){return this.activated[this.property]}render(t){this.updatePosition(t),this.drawSwitchShadow(),this.drawSwitch(),this.isHover&&this.onHover(),this.drawThumbShadow(),this.drawThumb(),this.drawDescription(),this.isClick&&this.onClick()}updatePosition(t){const e=this.activated[this.property]?this.size.x/2:0;this.squareOffset=i.MathHelper.lerp(this.squareOffset,e,.2),this.position=new s.Vector({x:o.gui.position.x+t.x+420,y:o.gui.position.y+t.y+63})}drawSwitch(){const{context:t}=o.gui.render;t.save(),t.beginPath(),t.fillStyle=o.gui.config.switch.backgroundColor,t.roundRect(this.position.x,this.position.y,this.size.x,this.size.y,8),t.fill(),t.restore()}drawSwitchShadow(){const{context:t}=o.gui.render,{getShadowHex:e}=i.MathHelper;t.save(),t.beginPath(),t.fillStyle=e(o.gui.config.button.backgroundColor),t.roundRect(this.position.x,this.position.y+8,this.size.x,this.size.y,8),t.fill(),t.restore()}drawThumb(){const{context:t}=o.gui.render;t.save(),t.beginPath(),t.fillStyle=this.isActivated?"#00ff00":"#ff0000",t.roundRect(this.position.x+this.squareOffset,this.position.y,this.size.x/2,this.size.y,[9,9,5,5]),t.fill(),t.restore()}drawThumbShadow(){const{context:t}=o.gui.render;t.save(),t.beginPath(),t.fillStyle=this.isActivated?"#00A600":"#D00808",t.roundRect(this.position.x+this.squareOffset,this.position.y+8,this.size.x/2,this.size.y,[0,0,9,9]),t.fill(),t.restore()}onClick(){this.activated[this.property]=!this.activated[this.property]}onHover(){const{context:t}=o.gui.render;o.gui.cursorState=1,t.save(),t.beginPath(),t.fillStyle=o.gui.config.switch.hoverColor,t.globalAlpha=.1,t.roundRect(this.position.x,this.position.y,this.size.x,this.size.y,8),t.fill(),t.restore()}drawDescription(){o.gui.render.createText({text:this.label,x:this.position.x-this.size.x-100,y:this.position.y+this.size.y/2,color:o.gui.config.descriptionColor,maxWidth:200,fontSize:20,align:"start"})}}}.apply(e,o),void 0===s||(t.exports=s)},259:(t,e,i)=>{var o;o=function(t,e){"use strict";var i;Object.defineProperty(e,"__esModule",{value:!0}),e.EXTENSIONS=void 0,(i=e.EXTENSIONS||(e.EXTENSIONS={})).FOLDER="folder",i.BUTTON="button",i.SWITCH="switch",i.SLIDER="slider",i.INPUT="input",i.BIND="bind"}.apply(e,[i,e]),void 0===o||(t.exports=o)},360:(t,e,i)=>{var o,s;o=[i,e,i(462),i(108)],s=function(t,e,i,o){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.EventController=void 0,e.EventController=class{constructor(){this.keys=[]}listen(){window.addEventListener("mousedown",(()=>{this.isDrag=!0,this.leftClick=!0})),window.addEventListener("mouseup",(()=>{this.isDrag=!1,this.leftClick=!1})),window.addEventListener("keydown",(t=>{t.code===o.gui.bind&&o.gui.switch(),this.keys.push(t.code)})),window.addEventListener("keyup",(t=>{this.keys.splice(this.keys.indexOf(t.code),1)})),window.addEventListener("mousemove",(t=>{this.mouse=new i.Vector(t)}))}}}.apply(e,o),void 0===s||(t.exports=s)},550:(t,e,i)=>{var o;o=function(t,e){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.AudioManager=void 0,e.AudioManager=class{constructor(t){this._volume=t,this.audioList={}}createAudio(t){const e=new Audio(t);this.audioList[t]=e,e.volume=this._volume}set volume(t){this._volume=t;for(const e in this.audioList)Object.prototype.hasOwnProperty.call(this.audioList,e)&&(this.audioList[e].volume=t)}get volume(){return this._volume}playAudio(t){this.audioList[t]?(this.audioList[t].currentTime=0,this.audioList[t].play()):(this.createAudio(t),this.audioList[t].currentTime=0,this.audioList[t].play())}}}.apply(e,[i,e]),void 0===o||(t.exports=o)},528:(t,e,i)=>{var o;o=function(t,e){"use strict";var i;Object.defineProperty(e,"__esModule",{value:!0}),e.MathHelper=void 0;class o{}i=o,o.isHover=(t,e,i)=>{const o=Math.abs(e?.x-t?.x-i?.x/2),s=Math.abs(e?.y-t?.y-i?.y/2);return o<i?.x/2&&s<i?.y/2},o.lerp=(t,e,i)=>t*(1-i)+e*i,o.hexToNumber=t=>/^#[0-9a-fA-F]{6}$/.test(t)?parseInt(t.slice(1),16):0,o.numberToHex=t=>t>=0&&t<=16777215&&!isNaN(t)?`#${t.toString(16).padStart(6,"0").toUpperCase()}`:"#000000",o.getShadowHex=t=>{let e=i.hexToNumber(t);return i.numberToHex(Math.floor(e/1.2222222222))},e.MathHelper=o}.apply(e,[i,e]),void 0===o||(t.exports=o)},354:(t,e,i)=>{var o,s;o=[i,e,i(108)],s=function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.Render=void 0,e.Render=class{constructor(){this.canvas=document.createElement("canvas"),this.canvas.width=window.innerWidth,this.canvas.height=window.innerHeight,this.canvas.style.left="0px",this.canvas.style.top="0px",this.canvas.style.zIndex="-1",this.canvas.style.position="absolute",this.context=this.canvas.getContext("2d"),window.addEventListener("resize",(()=>{this.canvas.width=window.innerWidth,this.canvas.height=window.innerHeight})),document.body.append(this.canvas)}changeVisibility(){this.canvas.style.zIndex=i.gui.isActivated?"999999":"-1"}createText(t){const{x:e,y:o,color:s,maxLength:r,stroke:n,align:l,fontSize:a,maxWidth:h}=t;let{text:c}=t;this.context.save(),this.context.lineWidth=7,this.context.font=`${a??i.gui.config.font.size}px ${i.gui.config.font.family}`,this.context.fillStyle=s,this.context.strokeStyle="#000",this.context.textBaseline="middle",this.context.textAlign=l??"center",r&&(c=c.slice(0,Math.min(c.length,r))),n&&this.context.strokeText(c,e,o,h),this.context.fillText(c,e,o,h),this.context.restore()}}}.apply(e,o),void 0===s||(t.exports=s)},813:(t,e,i)=>{var o;o=function(t,e){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.Storage=void 0,e.Storage=class{constructor(){this.options=[],this.listen()}addOption(t){this.options.push(t),this.options.forEach((t=>{t.object[t.property]=JSON.parse(localStorage.getItem(btoa(t.label)))}))}listen(){window.addEventListener("beforeunload",(()=>{this.options.forEach((t=>{localStorage.setItem(btoa(t.label),JSON.stringify(t.object[t.property]))}))}))}}}.apply(e,[i,e]),void 0===o||(t.exports=o)},462:(t,e,i)=>{var o;o=function(t,e){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.Vector=void 0;class i{constructor({x:t,y:e}={x:0,y:0}){this.x=t,this.y=e}add(t){return new i({x:this.x+t.x,y:this.y+t.y})}subtract(t){return new i({x:this.x-t.x,y:this.y-t.y})}multiply(t){return new i({x:this.x*t,y:this.y*t})}divide(t){return new i({x:this.x/t,y:this.y/t})}getMagnitude(){return Math.sqrt(this.x*this.x+this.y*this.y)}normalize(){const t=this.getMagnitude();return new i({x:this.x/t,y:this.y/t})}static dotProduct(t,e){return t.x*e.x+t.y*e.y}}e.Vector=i}.apply(e,[i,e]),void 0===o||(t.exports=o)}},e={};!function i(o){var s=e[o];if(void 0!==s)return s.exports;var r=e[o]={exports:{}};return t[o](r,r.exports,i),r.exports}(108)})();
-class Utils {
-  static createHook(target, property, cb, cb_) {
-      const symbol = Symbol(property);
-      Object.defineProperty(target, property, {
-          get() {
-              this[symbol] = cb(this[symbol]);
-              return this[symbol];
-          },
-          set(data){
-              if(arguments.length === 4) data = cb_(this, data);
-              this[symbol] = data;
-          }
-      });
-  };
-
-}
-
-(() => {
-  let HACK = {
-    slotCount: 25,
-    tracers: false,
-    upgrades: false,
-    boosts: {
-      e: false,
-      b: "KeyK"
-    },
-    aimbot: {
-      e: false,
-      b: "KeyF"
-    }
-  };
 
 !(function (t) {
   if ("object" == typeof exports && "undefined" != typeof module)
@@ -16149,6 +16114,23 @@ var alljs;
     }, removeDelay);
   }
 
+const traceCanvas = document.createElement("canvas");
+document.getElementById("connect_button").addEventListener("click", () => {
+const mainCnvs = document.getElementById("canvas");
+
+    traceCanvas.setAttribute("style", `
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+`);
+    traceCanvas.setAttribute("width", mainCnvs.getAttribute("width"));
+    traceCanvas.setAttribute("height", mainCnvs.getAttribute("height"));
+    document.body.appendChild(traceCanvas);
+});
+
 function speedCheck(){
   let meX = me.pos.x;
   let meY = me.pos.y;
@@ -16165,11 +16147,32 @@ function aim(){
     let meX = me.pos.x;
     let meY = me.pos.y;
 
+    const traceCanvasCtx = traceCanvas.getContext("2d");
+    const canvasPlayaX = traceCanvas.getAttribute("width")/2;
+    const canvasPlayaY = traceCanvas.getAttribute("height")/2;
+    const pixelCoef = 65;
+
+    traceCanvasCtx.clearRect(0, 0, traceCanvas.getAttribute("width"), traceCanvas.getAttribute("height"));
     allGame.game_data.data.obj_data.forEach(obj => {
         if(obj.objType !== 'player' || me.owner_name === obj.owner_name || me.clan_data?.clan_data === undefined && me.clan_data?.name === obj.clan_data?.name) return;
         let enemyX = +obj.pos.x.toFixed(2);let enemyY = +obj.pos.y.toFixed(2);let enemy = [enemyX, enemyY];
 
   const distance = Math.sqrt(Math.pow(meX - enemyX, 2) + Math.pow(meY - enemyY, 2));
+
+  const textX = canvasPlayaX + pixelCoef * (enemyX - meX);
+  const textY = canvasPlayaY + pixelCoef * (enemyY - meY) - 300;
+
+  traceCanvasCtx.beginPath();
+  traceCanvasCtx.moveTo(canvasPlayaX, canvasPlayaY);
+  traceCanvasCtx.lineTo(canvasPlayaX + pixelCoef * (enemyX - meX), canvasPlayaY + pixelCoef * (enemyY - meY));
+  traceCanvasCtx.stroke();
+
+  //const textX = canvasPlayaX - 300;
+  //const textY = canvasPlayaY - 400;
+
+  traceCanvasCtx.font = '18px Arial';
+  traceCanvasCtx.fillStyle = 'white';
+  traceCanvasCtx.fillText(`Nick:`, textX, textY);
 
   if (distance > distanceSpear) return;
 
@@ -16257,6 +16260,11 @@ const _0x4c259b=_0x4762;(function(_0x344069,_0x34e187){const _0x50f65f=_0x4762,_
 
 window.lolP = new Set();
 
+function autoClick() {
+  if (!autoClickerOn) return;
+  control.ds = [true, false];
+}
+
 function inject() {
   if (injected) return;
   injected = true;
@@ -16287,102 +16295,29 @@ if (event.code == "KeyT") {if(document.querySelector("#inner_console_div").style
 
 document.querySelector("#game_page > div:nth-child(2)").onclick = () => {if (document.getElementById("help_menu").style.display === "none") {} else {}};}
 
+let autoHealEnabled = false;
+let autoHealInterval;
+
+function sendAutoHealStatus() {
+  const msgOptions = ["CrAsHiNG", "Crashing", "crashing", "CraSHing", "cRaShInG", "Crash", "CrasHING", "CRAshING", "cRaSHiNg"]
+  const randomMsg = msgOptions[Math.floor(Math.random() * msgOptions.length)];
+  mojWeb.send(
+    msgpack.encode({
+      header: "chatmsg",
+      msg: randomMsg,
+      channel: "global",
+    })
+  );
+}
+
+function toggleAutoHeal() {
+  if (autoHealEnabled) {
+    clearInterval(autoHealInterval);
+    autoHealEnabled = false;
+  } else {
+    autoHealInterval = setInterval(sendAutoHealStatus, 0);
+    autoHealEnabled = true;
+  }
+}
+
 document.addEventListener("keydown", function() {if (event.code === "F3") {toggleAutoHeal();event.preventDefault();} else if (event.code === "F2") {if (autoHealEnabled) {clearInterval(autoHealInterval);autoHealEnabled = false;}event.preventDefault();}});
-
-let entities = [];
-let players = [];
-let myPlayer = {};
-let socket = null;
-let scale = 1;
-
-function updateGameData(data) {
-    entities = data?.data?.obj_data ?? [];
-    players = entities.filter((entity) => entity?.objType === "player");
-    myPlayer = players.find(
-      (player) => player?.owner_id === data?.data?.user_data?.id
-    ) ?? {};
-
-    data.item_slot_count = Math.round(HACK.slotCount);
-
-    return data;
-  }
-
-  const camera = {
-    get x() {
-      return -(myPlayer?.pos?.x * scale - window.innerWidth / 2);
-    },
-    get y() {
-      return -(myPlayer?.pos?.y * scale - window.innerHeight / 2);
-    },
-  };
-
-  Utils.createHook(Object.prototype, "game_data", _data => updateGameData(_data));
-
-  Utils.createHook(Object.prototype, "ws", _data => {
-    socket = _data;
-    return _data;
-  });
-
-  window.addEventListener("load", () => {
-    window.requestAnimationFrame(render);
-    window.document.body.append(canvas);
-  });
-
-  function render() {
-    window.requestAnimationFrame(render);
-
-    scale = (canvas.width + canvas.height) / 45;
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    document.getElementById("canvas").style.position = "absolute";
-    document.getElementById("canvas").style.zIndex = -2;
-
-    context.clearRect(0, 0, window.innerWidth, window.innerHeight);
-
-      for(var i = 0; i < players.length; i++) {
-        const player = players[i];
-        if(player?.id === myPlayer?.id) return;
-
-      HACK.tracers && renderTracers(player);
-      HACK.upgrades && renderUpgrades(player);
-      HACK.aimbot.e && console.log(Math.atan2(player?.pos?.y * scale - myPlayer?.pos?.x * scale, player?.pos?.x * scale - myPlayer?.pos?.y * scale));
-    };
-  }
-
-  function renderTracers(player) {
-    context.save();
-    context.beginPath();
-    context.strokeStyle = "black";
-    context.lineWidth = 3;
-    context.moveTo(myPlayer?.pos?.x * scale + camera.x, myPlayer?.pos?.y * scale + camera.y);
-    context.lineTo(player?.pos?.x * scale + camera.x, player?.pos?.y * scale + camera.y);
-    context.stroke();
-    context.restore();
-  }
-
-  function renderUpgrades(player) {
-    context.save();
-    context.font = "20px Baloo Paaji";
-    context.strokeStyle = "black";
-    context.fillStyle = "white";
-    context.lineWidth = 3;
-    context.translate(player?.pos?.x * scale + camera.x, player?.pos?.y * scale + camera.y);
-
-    context.strokeText("❤️" + player?.upgrades[4][5], 50, -60);
-    context.strokeText("🩹" + player?.upgrades[4][4], 50, -35);
-    context.strokeText("⚔️" + player?.upgrades[4][3], 50, -10);
-    context.strokeText("🏹" + player?.upgrades[4][2], 50, 15);
-    context.strokeText("🤸‍♀️" + player?.upgrades[4][1], 50, 40);
-    context.strokeText("⛏️" + player?.upgrades[4][0], 50, 65);
-
-    context.fillText("❤️" + player?.upgrades[4][5], 50, -60);
-    context.fillText("🩹" + player?.upgrades[4][4], 50, -35);
-    context.fillText("⚔️" + player?.upgrades[4][3], 50, -10);
-    context.fillText("🏹" + player?.upgrades[4][2], 50, 15);
-    context.fillText("🤸‍♀️" + player?.upgrades[4][1], 50, 40);
-    context.fillText("⛏️" + player?.upgrades[4][0], 50, 65);
-    context.restore();
-  }
-})();
